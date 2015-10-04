@@ -1,3 +1,4 @@
 0001-fixed-destdir.patch
 0002-unused-uname-r.patch
 0003-use-deb-script-path.patch
+0004-move-scripts-to-postinst.patch

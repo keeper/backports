@@ -1,6 +1,6 @@
---- backports.orig/Makefile.real
-+++ backports/Makefile.real
-@@ -89,14 +89,14 @@
+--- a/Makefile.real
++++ b/Makefile.real
+@@ -89,8 +89,8 @@
  
  .PHONY: install
  install: modules
@@ -9,16 +9,5 @@
 +	@$(MAKE) -C $(KLIB_BUILD) M=$(BACKPORT_DIR) \
 +		INSTALL_MOD_PATH=$(shell pwd)/debian/tmp/$(KLIB)/$(KMODDIR) $(KMODPATH_ARG) \
  		modules_install
--	@./scripts/blacklist.sh $(KLIB)/ $(KLIB)/$(KMODDIR)
--	@./scripts/compress_modules.sh $(KLIB)/$(KMODDIR)
--	@./scripts/check_depmod.sh
--	@/sbin/depmod -a
--	@./scripts/update-initramfs.sh $(KLIB)
-+	#@./scripts/blacklist.sh $(DESTDIR)/$(KLIB)/ $(DISTDIR)/$(KLIB)/$(KMODDIR)
-+	#@./scripts/compress_modules.sh $(DISTDIR)/$(KLIB)/$(KMODDIR)
-+	#@./scripts/check_depmod.sh
-+	#@/sbin/depmod -a
-+	#@./scripts/update-initramfs.sh $(KLIB)
- 	@echo
- 	@echo Your backported driver modules should be installed now.
- 	@echo Reboot.
+ 	@./scripts/blacklist.sh $(KLIB)/ $(KLIB)/$(KMODDIR)
+ 	@./scripts/compress_modules.sh $(KLIB)/$(KMODDIR)

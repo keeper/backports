@@ -11,7 +11,8 @@ TARGET_KVER="`dpkg-parsechangelog|grep "^Source"|sed "s/Source:\ [a-z-]*-\(.*\)/
 TARGET_KVERSION="$(TARGET_KVER)-generic"
 
 override_dh_auto_build:
-	#KVERSION=$(TARGET_KVERSION) make defconfig-igb
+	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/backports-wifi.postinst.in \
+		> debian/backports-wifi-$(TARGET_KVER).postinst
 	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
 	dh_auto_build -- DISTDIR=debian/tmp KVERSION=$(TARGET_KVERSION)
 
