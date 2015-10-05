@@ -1,3 +1,4 @@
+.blacklist.map	usr/share/backports-common
 scripts/blacklist.sh	usr/share/backports-common
 scripts/compress_modules.sh	usr/share/backports-common
 scripts/uninstall.sh	usr/share/backports-common

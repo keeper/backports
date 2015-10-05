@@ -3,3 +3,4 @@
 0003-use-deb-script-path.patch
 0004-move-scripts-to-postinst.patch
 0005-move-scripts-to-postrm.patch
+0006-handle-blacklist-map.patch

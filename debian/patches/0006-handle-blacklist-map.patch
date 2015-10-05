@@ -1,0 +1,11 @@
+--- a/scripts/blacklist.sh
++++ b/scripts/blacklist.sh
+@@ -1,7 +1,7 @@
+ #!/bin/bash
+ 
+ BLACKLIST_CONF="/etc/modprobe.d/backports.conf"
+-BLACKLIST_MAP=".blacklist.map"
++BLACKLIST_MAP="/usr/share/backports-common/.blacklist.map"
+ 
+ MODULE_DIR=$1
+ MODULE_UPDATES=$2
