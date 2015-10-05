@@ -14,6 +14,9 @@ override_dh_auto_build:
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/backports-wifi.postinst.in \
 		> debian/backports-wifi-$(TARGET_KVER).postinst
 	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
+	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/backports-wifi.postrm.in \
+		> debian/backports-wifi-$(TARGET_KVER).postrm
+	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
 	dh_auto_build -- DISTDIR=debian/tmp KVERSION=$(TARGET_KVERSION)
 
 override_dh_auto_install:

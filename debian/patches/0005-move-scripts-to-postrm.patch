@@ -1,0 +1,17 @@
+--- a/Makefile.real
++++ b/Makefile.real
+@@ -98,12 +98,8 @@
+ 
+ .PHONY: uninstall
+ uninstall:
+-	@./scripts/uninstall.sh
+-	@/sbin/depmod -a
+-	@./scripts/update-initramfs.sh $(KLIB)
+-	@echo
+-	@echo Your backported driver modules should be uninstalled now.
+-	@echo Reboot.
++	@echo 
++	@echo move to debian/postrm
+ 	@echo
+ 
+ .PHONY: clean

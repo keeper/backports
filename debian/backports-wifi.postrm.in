@@ -21,6 +21,13 @@ set -e
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+	/usr/share/backports-common/uninstall.sh
+	/sbin/depmod -a
+	/usr/share/backports-common/update-initramfs.sh /lib/modules/#KVERSION#/
+	echo
+	echo Your backported driver modules should be uninstalled now.
+	echo Reboot.
+	echo
     ;;
 
     *)
