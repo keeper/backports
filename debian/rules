@@ -10,7 +10,7 @@ export DH_OPTIONS
 TARGET_KVER := `dpkg-parsechangelog|grep "^Source"|sed "s/Source:\ [a-z-]*-\(.*\)/\1/g"`
 TARGET_KVERSION := $(TARGET_KVER)-generic
 SRC_PATH := lib/modules/$(TARGET_KVERSION)/updates/lib/modules/$(TARGET_KVERSION)/extra
-INSTALL_PATH := /lib/modules/$(TARGET_KVERSION)/extra
+INSTALL_PATH := /lib/modules/$(TARGET_KVERSION)/updates/backports
 
 override_dh_auto_build:
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/backports-wifi.postinst.in \
