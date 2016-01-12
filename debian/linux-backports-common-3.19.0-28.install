@@ -1,6 +1,6 @@
-.blacklist.map	usr/share/backports-common
-scripts/blacklist.sh	usr/share/backports-common
-scripts/compress_modules.sh	usr/share/backports-common
-scripts/check_depmod.sh	usr/share/backports-common
-scripts/mod_helpers.sh	usr/share/backports-common
-scripts/update-initramfs.sh	usr/share/backports-common
+.blacklist.map	usr/share/linux-backports-common
+scripts/blacklist.sh	usr/share/linux-backports-common
+scripts/compress_modules.sh	usr/share/linux-backports-common
+scripts/check_depmod.sh	usr/share/linux-backports-common
+scripts/mod_helpers.sh	usr/share/linux-backports-common
+scripts/update-initramfs.sh	usr/share/linux-backports-common
