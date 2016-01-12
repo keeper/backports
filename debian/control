@@ -24,3 +24,17 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-3.19.0-28, linux-image-3.19.0-28-generic
 Description: Linux kernel backports - Wireless drivers
  Linux kernel backports. This package includes wireless drivers.
+
+Package: linux-backports-4.1-generic
+Architecture: amd64 i386
+Depends: ${misc:Depends}, linux-backports-wifi-3.19.0-28
+Description: Backported wireless drivers for generic kernel image
+ This empty package allows people to keep their backported wireless modules
+ up-to-date when upgrading their Linux kernel.
+
+Package: linux-backports-generic
+Architecture: amd64 i386
+Depends: ${misc:Depends}, linux-backports-4.1-generic
+Description: Backported wireless drivers for generic kernel image
+ This empty package allows people to keep their backported wireless modules
+ up-to-date when upgrading their Linux kernel.
