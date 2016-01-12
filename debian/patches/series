@@ -4,3 +4,4 @@
 0004-move-scripts-to-postinst.patch
 0005-move-scripts-to-postrm.patch
 0006-handle-blacklist-map.patch
+0007-add-defconfig-ethernet.patch
