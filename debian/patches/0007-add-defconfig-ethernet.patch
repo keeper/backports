@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/defconfigs/ethernet
+@@ -0,0 +1,3 @@
++CPTCFG_ALX=m
++CPTCFG_NET_VENDOR_INTEL=y
++CPTCFG_IGB=m
