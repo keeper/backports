@@ -21,9 +21,10 @@ override_dh_auto_build:
 	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
 	dh_auto_build -- DISTDIR=debian/tmp KVERSION=$(TARGET_KVERSION)
 	@-echo "Building install list:"
-	find ./ -name "*.ko" > debian/linux-backports-wifi-$(TARGET_KVER).install
-	awk -i inplace -v src_path=$(SRC_PATH) -v install_path=$(INSTALL_PATH) \
-		'{src_str = $$1; install_str = $$1; sub(/^\./, src_path, src_str); sub(/^\./, install_path, install_str); print src_str, install_str;}' debian/linux-backports-wifi-$(TARGET_KVER).install
+	find ./ -name "*.ko" > debian/ko_list
+	awk -v src_path=$(SRC_PATH) -v install_path=$(INSTALL_PATH) \
+		'{src_str = $$1; install_str = $$1; sub(/^\./, src_path, src_str); sub(/^\./, install_path, install_str); print src_str, install_str;}' debian/ko_list > debian/linux-backports-wifi-$(TARGET_KVER).install
+	rm debian/ko_list
 
 override_dh_auto_install:
 	mkdir -p debian/tmp/usr/share/linux-backports-common
