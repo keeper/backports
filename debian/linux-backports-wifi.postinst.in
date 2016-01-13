@@ -20,11 +20,11 @@ set -e
 
 case "$1" in
     configure)
-	/usr/share/backports-common/blacklist.sh /lib/modules/#KVERSION#/ /lib/modules/#KVERSION#/updates
-	/usr/share/backports-common/compress_modules.sh /lib/modules/#KVERSION#//updates
-	/usr/share/backports-common/check_depmod.sh
+	/usr/share/linux-backports-common/blacklist.sh /lib/modules/#KVERSION#/ /lib/modules/#KVERSION#/updates
+	/usr/share/linux-backports-common/compress_modules.sh /lib/modules/#KVERSION#//updates
+	/usr/share/linux-backports-common/check_depmod.sh
 	/sbin/depmod -a
-	/usr/share/backports-common/update-initramfs.sh /lib/modules/#KVERSION#/
+	/usr/sbin/update-initramfs -u -k #KVERSION#
 	echo
 	echo Your backported driver modules should be installed now.
 	echo Reboot.
