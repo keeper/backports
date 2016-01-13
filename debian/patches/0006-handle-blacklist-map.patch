@@ -5,7 +5,7 @@
  
  BLACKLIST_CONF="/etc/modprobe.d/backports.conf"
 -BLACKLIST_MAP=".blacklist.map"
-+BLACKLIST_MAP="/usr/share/backports-common/.blacklist.map"
++BLACKLIST_MAP="/usr/share/linux-backports-common/.blacklist.map"
  
  MODULE_DIR=$1
  MODULE_UPDATES=$2
