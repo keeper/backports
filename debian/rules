@@ -7,10 +7,8 @@
 # This has to be exported to make some magic below work.
 export DH_OPTIONS
 
-TARGET_KVER := `dpkg-parsechangelog|grep "^Source"|sed "s/Source:\ [a-z-]*-\(.*\)/\1/g"`
-TARGET_KVERSION := $(TARGET_KVER)-generic
-SRC_PATH := lib/modules/$(TARGET_KVERSION)/updates/lib/modules/$(TARGET_KVERSION)/extra
-INSTALL_PATH := /lib/modules/$(TARGET_KVERSION)/updates/linux-backports
+TARGET_KVER="`dpkg-parsechangelog|grep "^Source"|sed "s/Source:\ [a-z-]*-\(.*\)/\1/g"`"
+TARGET_KVERSION="$(TARGET_KVER)-generic"
 
 override_dh_auto_build:
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postinst.in \
@@ -20,11 +18,6 @@ override_dh_auto_build:
 		> debian/linux-backports-wifi-$(TARGET_KVER).postrm
 	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
 	dh_auto_build -- DISTDIR=debian/tmp KVERSION=$(TARGET_KVERSION)
-	@-echo "Building install list:"
-	find ./ -name "*.ko" > debian/ko_list
-	awk -v src_path=$(SRC_PATH) -v install_path=$(INSTALL_PATH) \
-		'{src_str = $$1; install_str = $$1; sub(/^\./, src_path, src_str); sub(/^\./, install_path, install_str); print src_str, install_str;}' debian/ko_list > debian/linux-backports-wifi-$(TARGET_KVER).install
-	rm debian/ko_list
 
 override_dh_auto_install:
 	mkdir -p debian/tmp/usr/share/linux-backports-common
