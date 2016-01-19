@@ -25,6 +25,12 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-3.19.0-28, l
 Description: Linux kernel backports - Wireless drivers
  Linux kernel backports. This package includes wireless drivers.
 
+Package: linux-backports-ethernet-3.19.0-28
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-3.19.0-28, linux-image-3.19.0-28-generic
+Description: Linux kernel backports - Ethernet drivers
+ Linux kernel backports. This package includes ethernet drivers.
+
 Package: linux-backports-4.1-generic
 Architecture: amd64 i386
 Depends: ${misc:Depends}, linux-backports-wifi-3.19.0-28
