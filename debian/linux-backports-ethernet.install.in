@@ -1,0 +1,2 @@
+lib/modules/#KVERSION#/updates/lib/modules/#KVERSION#/extra/drivers/net/ethernet/atheros/alx/alx.ko /lib/modules/#KVERSION#/updates/linux-backports/compat/
+lib/modules/#KVERSION#/updates/lib/modules/#KVERSION#/extra/drivers/net/ethernet/intel/igb/igb.ko /lib/modules/#KVERSION#/updates/linux-backports/compat/

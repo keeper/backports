@@ -22,12 +22,16 @@ override_dh_auto_build:
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postrm.in \
 		> debian/linux-backports-wifi-$(TARGET_KVER).postrm
 	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
+	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.install.in \
+		> debian/linux-backports-wifi-$(TARGET_KVER).install
 	# ethernet
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postinst.in \
 		> debian/linux-backports-ethernet-$(TARGET_KVER).postinst
 	KVERSION=$(TARGET_KVERSION) make defconfig-ethernet
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postrm.in \
 		> debian/linux-backports-ethernet-$(TARGET_KVER).postrm
+	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-ethernet.install.in \
+		> debian/linux-backports-ethernet-$(TARGET_KVER).install
 	# Build all
 	KVERSION=$(TARGET_KVERSION) make allmodconfig
 	dh_auto_build -- DISTDIR=debian/tmp KVERSION=$(TARGET_KVERSION)
