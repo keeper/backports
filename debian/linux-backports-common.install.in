@@ -4,4 +4,4 @@ scripts/compress_modules.sh	usr/share/linux-backports-common
 scripts/check_depmod.sh	usr/share/linux-backports-common
 scripts/mod_helpers.sh	usr/share/linux-backports-common
 scripts/update-initramfs.sh	usr/share/linux-backports-common
-lib/modules/3.19.0-28-generic/updates/lib/modules/3.19.0-28-generic/extra/compat/compat.ko /lib/modules/3.19.0-28-generic/extra/compat/compat.ko
+lib/modules/#KVERSION#/updates/lib/modules/#KVERSION#/extra/compat/compat.ko /lib/modules/#KVERSION#/updates/linux-backports/compat/compat.ko

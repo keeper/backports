@@ -15,6 +15,9 @@ debina/control: debian/control.in
 	sed "s/#KVER#/$(TARGET_KVER)/g" debian/control.in > debian/control
 
 override_dh_auto_build:
+	# common
+	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-common.install.in \
+		> debian/linux-backports-common-$(TARGET_KVER).install
 	# wifi
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postinst.in \
 		> debian/linux-backports-wifi-$(TARGET_KVER).postinst
