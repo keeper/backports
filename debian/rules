@@ -14,14 +14,11 @@ override_dh_auto_build:
 	# wifi
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postinst.in \
 		> debian/linux-backports-wifi-$(TARGET_KVER).postinst
-	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postrm.in \
 		> debian/linux-backports-wifi-$(TARGET_KVER).postrm
-	KVERSION=$(TARGET_KVERSION) make defconfig-wifi
 	# ethernet
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postinst.in \
 		> debian/linux-backports-ethernet-$(TARGET_KVER).postinst
-	KVERSION=$(TARGET_KVERSION) make defconfig-ethernet
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postrm.in \
 		> debian/linux-backports-ethernet-$(TARGET_KVER).postrm
 	# Build all
