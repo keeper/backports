@@ -8,11 +8,6 @@ Homepage: https://launchpad.net/backports
 #Vcs-Git: git://git.debian.org/collab-maint/backports.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/backports.git;a=summary
 
-Package: linux-backports-doc-3.19.0-28
-Architecture: all
-Description: documentation for backports
- <insert long description, indented with spaces>
-
 Package: linux-backports-common-3.19.0-28
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
