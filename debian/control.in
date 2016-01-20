@@ -1,34 +1,34 @@
-Source: backports-3.19.0-28
+Source: backports-#KVER#
 Section: kernel
 Priority: optional
 Maintainer: Keng-Yu Lin <kengyu@ubuntu.com>
-Build-Depends: debhelper (>= 8.0.0), linux-headers-3.19.0-28
+Build-Depends: debhelper (>= 8.0.0), linux-headers-#KVER#
 Standards-Version: 3.9.4
 Homepage: https://launchpad.net/backports
 #Vcs-Git: git://git.debian.org/collab-maint/backports.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/backports.git;a=summary
 
-Package: linux-backports-common-3.19.0-28
+Package: linux-backports-common-#KVER#
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Common helper scripts
  Common helper script for post-inst, update the initramfs, etc.
 
-Package: linux-backports-wifi-3.19.0-28
+Package: linux-backports-wifi-#KVER#
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-3.19.0-28, linux-image-3.19.0-28-generic
+Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-#KVER#, linux-image-#KVER#-generic
 Description: Linux kernel backports - Wireless drivers
  Linux kernel backports. This package includes wireless drivers.
 
-Package: linux-backports-ethernet-3.19.0-28
+Package: linux-backports-ethernet-#KVER#
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-3.19.0-28, linux-image-3.19.0-28-generic
+Depends: ${shlibs:Depends}, ${misc:Depends}, linux-backports-common-#KVER#, linux-image-#KVER#-generic
 Description: Linux kernel backports - Ethernet drivers
  Linux kernel backports. This package includes ethernet drivers.
 
 Package: linux-backports-4.1-generic
 Architecture: amd64 i386
-Depends: ${misc:Depends}, linux-backports-wifi-3.19.0-28
+Depends: ${misc:Depends}, linux-backports-wifi-#KVER#
 Description: Backported wireless drivers for generic kernel image
  This empty package allows people to keep their backported wireless modules
  up-to-date when upgrading their Linux kernel.
