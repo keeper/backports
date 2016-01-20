@@ -10,6 +10,10 @@ export DH_OPTIONS
 TARGET_KVER="`dpkg-parsechangelog|grep "^Source"|sed "s/Source:\ [a-z-]*-\(.*\)/\1/g"`"
 TARGET_KVERSION="$(TARGET_KVER)-generic"
 
+debina/control: debian/control.in
+	# control
+	sed "s/#KVER#/$(TARGET_KVER)/g" debian/control.in > debian/control
+
 override_dh_auto_build:
 	# wifi
 	sed "s/#KVERSION#/$(TARGET_KVERSION)/g" debian/linux-backports-wifi.postinst.in \
